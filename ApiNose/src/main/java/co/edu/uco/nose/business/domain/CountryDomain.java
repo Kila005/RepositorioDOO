@@ -2,8 +2,8 @@ package co.edu.uco.nose.business.domain;
 
 import java.util.UUID;
 
-import co.edu.uco.nose.crosscuting.helper.TextHelper;
-import co.edu.uco.nose.crosscuting.helper.UUIDHelper;
+import co.edu.uco.nose.crosscuting.TextHelper;
+import co.edu.uco.nose.crosscuting.UUIDHelper;
 
 public final class CountryDomain extends Domain {
 	

@@ -1,4 +1,4 @@
-package co.edu.uco.nose.crosscuting.helper;
+package co.edu.uco.nose.crosscuting.Helper;
 
 public class TextHelper {
 	

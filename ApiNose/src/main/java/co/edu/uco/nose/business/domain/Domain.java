@@ -1,7 +1,7 @@
 package co.edu.uco.nose.business.domain;
 import java.util.UUID;
 
-import co.edu.uco.nose.crosscuting.helper.UUIDHelper;
+import co.edu.uco.nose.crosscuting.UUIDHelper;
 
 class Domain {
 	private UUID id;

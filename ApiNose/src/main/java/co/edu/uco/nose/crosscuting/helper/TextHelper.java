@@ -1,6 +1,6 @@
-package co.edu.uco.nose.crosscuting.Helper;
+package co.edu.uco.nose.crosscuting.helper;
 
-public class TextHelper {
+public final class TextHelper {
 	
 	private static final String EMPTY = "";
 	
@@ -14,7 +14,7 @@ public class TextHelper {
 	public static String getDefault(final String value) {
 		return ObjectHelper.getDefault(value, getDefault());
 	}
-	public static String getDefaultWhithTrim(final String value) {
+	public static String getDefaultWhithTrim(final String value) {//trim es quitar los espacios en blanco
 		return getDefault(value).trim();
 	}
 

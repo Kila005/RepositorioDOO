@@ -1,10 +1,11 @@
-package co.edu.uco.nose.crosscuting.Helper;
+package co.edu.uco.nose.crosscuting.helper;
 
 import java.util.UUID;
 
 public final class UUIDHelper {
 	
 	private static final UUIDHelper INSTANCE = new UUIDHelper();
+	
 	private static final String UUID_DEFAULT_AS_STRING = "00000000-0000-0000-0000-000000000000";
 	
 	private UUIDHelper() {
@@ -22,7 +23,7 @@ public final class UUIDHelper {
 		return ObjectHelper.getDefault(value, getDefault());
 	}
 	
-	public UUID getFromString(final String uuidAsString) {
+	public UUID getFromString(final String uuidAsString) { //Combierte a string
 		if (uuidAsString == null || "".equals(uuidAsString)) {
 			return getDefault();
 		} else {

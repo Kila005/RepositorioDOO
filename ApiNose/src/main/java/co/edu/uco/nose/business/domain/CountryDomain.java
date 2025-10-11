@@ -31,5 +31,9 @@ public final class CountryDomain extends Domain {
 	public void setName(final String name) {
 		this.name = TextHelper.getDefaultWhithTrim(name);
 	}
+	
+	public static CountryDomain getDefault() {
+        return new CountryDomain();
+    }
 
 }

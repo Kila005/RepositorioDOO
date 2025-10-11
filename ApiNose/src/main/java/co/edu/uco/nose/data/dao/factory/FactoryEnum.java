@@ -1,5 +1,6 @@
 package co.edu.uco.nose.data.dao.factory;
 
-public enum FactoryEnum {
+enum FactoryEnum {
+		SQLSERVER, POSTGRESQL, MYSQL, ORACLE
 
 }

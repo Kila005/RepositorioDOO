@@ -1,4 +1,4 @@
-package co.edu.uco.nose.entity;
+package co.edu.uco.nose.dto;
 
 import java.util.UUID;
 
@@ -6,55 +6,55 @@ import co.edu.uco.nose.crosscuting.helper.BooleanHelper;
 import co.edu.uco.nose.crosscuting.helper.TextHelper;
 import co.edu.uco.nose.crosscuting.helper.UUIDHelper;
 
-public class UserEntity extends Entity{
+public class UserDTO extends DTO{
 		private String name;
-		private IdTypeEntity idType;
+		private IdTypeDTO idType;
 		private String idNumber;
 		private String firstName;
 		private String secondName;
 		private String firstLastName;
 		private String secondLastName;
-		private CityEntity city;
+		private CityDTO city;
 		private String email;
 		private String phoneNumber;
 		private boolean ConfirmedEmail;
 		private boolean ConfirmedPhoneNumber;
 		
 		
-		public UserEntity() {
+		public UserDTO() {
 			super(UUIDHelper.getUUIDHelper().getDefault());
 			setName(TextHelper.getDefault());
-			setIdType(IdTypeEntity.getDefault());
+			setIdType(IdTypeDTO.getDefault());
 			setIdNumber(TextHelper.getDefault());
 			setFirstName(TextHelper.getDefault());
 			setSecondName(TextHelper.getDefault());
 			setFirstLastName(TextHelper.getDefault());
 			setSecondName(TextHelper.getDefault());
-			setCity(CityEntity.getDefault());
+			setCity(CityDTO.getDefault());
 			setEmail(TextHelper.getDefault());
 			setPhoneNumber(TextHelper.getDefault());
 			setConfirmedEmail(BooleanHelper.getDefault());
 			setConfirmedPhoneNumber(BooleanHelper.getDefault());
 		}
 		
-		public UserEntity (final UUID id) {
+		public UserDTO (final UUID id) {
 			super(id);
 			setName(TextHelper.getDefault());
-			setIdType(IdTypeEntity.getDefault());
+			setIdType(IdTypeDTO.getDefault());
 			setIdNumber(TextHelper.getDefault());
 			setFirstName(TextHelper.getDefault());
 			setSecondName(TextHelper.getDefault());
 			setFirstLastName(TextHelper.getDefault());
 			setSecondName(TextHelper.getDefault());
-			setCity(CityEntity.getDefault());
+			setCity(CityDTO.getDefault());
 			setEmail(TextHelper.getDefault());
 			setPhoneNumber(TextHelper.getDefault());
 			setConfirmedEmail(BooleanHelper.getDefault());
 			setConfirmedPhoneNumber(BooleanHelper.getDefault());			
 		}
 
-		public UserEntity(final UUID id, final String name, final IdTypeEntity idType, final String idNumber, final String firstName, 
-				final String secondName, final String firstLastName, final String secondLastName, final CityEntity city, 
+		public UserDTO(final UUID id, final String name, final IdTypeDTO idType, final String idNumber, final String firstName, 
+				final String secondName, final String firstLastName, final String secondLastName, final CityDTO city, 
 				final String email, final String phoneNumber, final  boolean confirmedEmail, final boolean confirmedPhoneNumber) {
 			
 			super(id);
@@ -80,11 +80,11 @@ public class UserEntity extends Entity{
 			this.name = TextHelper.getDefaultWhithTrim(name);
 		}
 		
-		public IdTypeEntity getIdType() {
+		public IdTypeDTO getIdType() {
 			return idType;
 		}
 
-		public void setIdType(IdTypeEntity idType) {
+		public void setIdType(IdTypeDTO idType) {
 			this.idType = idType;
 		}
 
@@ -128,11 +128,11 @@ public class UserEntity extends Entity{
 			this.secondLastName = secondLastName;
 		}
 
-		public CityEntity getCity() {
+		public CityDTO getCity() {
 			return city;
 		}
 
-		public void setCity(CityEntity city) {
+		public void setCity(CityDTO city) {
 			this.city = city;
 		}
 
@@ -168,8 +168,8 @@ public class UserEntity extends Entity{
 			ConfirmedPhoneNumber = confirmedPhoneNumber;
 		}
 
-		public static UserEntity getDefault() {
-	        return new UserEntity();
+		public static UserDTO getDefault() {
+	        return new UserDTO();
 	    }
 
 	}

@@ -9,25 +9,22 @@ import co.edu.uco.nose.data.dao.entity.CountryDAO;
 import co.edu.uco.nose.data.dao.entity.IdTypeDAO;
 import co.edu.uco.nose.data.dao.entity.StateDAO;
 import co.edu.uco.nose.data.dao.entity.UserDAO;
+import co.edu.uco.nose.data.dao.factory.sqlserver.SqlServerDAOFactory;
 
 public abstract class DAOFactory {
 	
 	protected Connection connection;
-	protected FactoryEnum factory = FactoryEnum.SQLSERVER;
+	protected static FactoryEnum factory = FactoryEnum.SQLSERVER;
 	
 	public static DAOFactory getFactory() {
-		switch (factory) {
-		
-		case SQLSERVER: {
+		if(FactoryEnum.SQLSERVER.equals(factory)) {
 			return new SqlServerDAOFactory();
-		}
-		default:
+		} else {
 			var userMessage = "Factoria no iniciada";
-			var technicalMessage= "Factoria no valida";
+			var technicalMessage ="Factoria no valida";
 			throw NoseException.create(userMessage, technicalMessage);
 		}
-			
-			
+					
 	}
 	
 	public abstract CityDAO getCityDAO();
@@ -40,33 +37,33 @@ public abstract class DAOFactory {
 	
 	protected final void initTransaction() {
 		SqlConnectionHelper.ensureTransactionIsNotStarted(connection);
+		
 		try {
 			connection.setAutoCommit(false);
-			
 		}catch (final SQLException exception) {
 			var userMessage ="";
 			var technicalMessage="";
-			throw NoseException.create(userMessage, technicalMessage);
+			throw NoseException.create(exception, userMessage, technicalMessage);
 		}catch (final Exception exception) {
-			var userMessage = "";
+			var userMesage = "";
 			var technicalMessage = "";
-			throw NoseException.create(userMessage, technicalMessage);
+			throw NoseException.create(exception,userMesage, technicalMessage);
 		}
 	}
 	
 	protected final void commitTransaction() {
 		SqlConnectionHelper.ensureTransactionIsStarted(connection);	
 		try {
-			connection.setAutoCommit(false);
+			connection.commit();
 			
 		}catch (final SQLException exception) {
 			var userMessage ="";
 			var technicalMessage="";
-			throw NoseException.create(userMessage, technicalMessage);
+			throw NoseException.create(exception,userMessage, technicalMessage);
 		}catch (final Exception exception) {
 			var userMesage = "";
 			var technicalMessage = "";
-			throw NoseException.create(userMesage, technicalMessage);
+			throw NoseException.create(exception, userMesage, technicalMessage);
 		}
 		
 	}
@@ -74,32 +71,32 @@ public abstract class DAOFactory {
 	protected final void rollbackTransaction() {
 		SqlConnectionHelper.ensureTransactionIsStarted(connection);
 		try {
-			connection.setAutoCommit(false);
+			connection.rollback();
 			
 		}catch (final SQLException exception) {
 			var userMessage ="";
 			var technicalMessage="";
-			throw NoseException.create(userMessage, technicalMessage);
+			throw NoseException.create(exception, userMessage, technicalMessage);
 		}catch (final Exception exception) {
 			var userMesage = "";
 			var technicalMessage = "";
-			throw NoseException.create(userMesage, technicalMessage);
+			throw NoseException.create(exception, userMesage, technicalMessage);
 		}
 	}
 	
 	protected final void closeConnection() {
 		SqlConnectionHelper.ensureConnectionIsOpen(connection);
 		try {
-			connection.setAutoCommit(false);
+			connection.close();
 			
 		}catch (final SQLException exception) {
 			var userMessage ="";
 			var technicalMessage="";
-			throw NoseException.create(userMessage, technicalMessage);
+			throw NoseException.create(exception, userMessage, technicalMessage);
 		}catch (final Exception exception) {
 			var userMesage = "";
 			var technicalMessage = "";
-			throw NoseException.create(userMesage, technicalMessage);
+			throw NoseException.create(exception, userMesage, technicalMessage);
 		}
 	}
 }

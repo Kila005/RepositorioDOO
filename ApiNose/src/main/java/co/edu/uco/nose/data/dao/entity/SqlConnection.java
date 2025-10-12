@@ -16,16 +16,8 @@ public abstract class SqlConnection {
 	}
     
 	private void setConnection(final Connection connection) {
-        
-        SqlConnectionHelper.ensureConnectionIsNotNull(connection);
 		
         SqlConnectionHelper.ensureConnectionIsOpen(connection);
-        
-        //
-        SqlConnectionHelper.ensureTransactionIsStarted(connection);
-        
-        SqlConnectionHelper.ensureTransactionIsNotStarted(connection);
-	    
 		this.connection = connection;
     }
 

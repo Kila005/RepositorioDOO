@@ -33,9 +33,9 @@ public final class SqlServerDAOFactory extends DAOFactory{
 			var technicalMessage="";
 			throw NoseException.create(exception, userMessage, technicalMessage);
 		}catch (final Exception exception) {
-			var userMesage = "";
+			var userMessage = "";
 			var technicalMessage = "";
-			throw NoseException.create(exception,userMesage, technicalMessage);
+			throw NoseException.create(exception,userMessage, technicalMessage);
 		}
 	}
 	@Override

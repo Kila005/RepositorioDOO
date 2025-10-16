@@ -48,7 +48,9 @@ public final class NoseException extends RuntimeException {
 	private void setTechnicallMessage(final String technicalMessage) {
 		this.technicallMessage = TextHelper.getDefaultWhithTrim(technicalMessage);
 	}
-	
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	
 	
 

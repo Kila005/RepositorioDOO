@@ -39,7 +39,7 @@ public enum MessagesEnum {
 
 	USER_ERROR_SQL_CONNECTION_UNEXPECTED_ERROR_VALIDATING_TRANSACTION_IS_NOT_STARTED("Error inesperado al validar el inicio de la transacción",
 			"Se presentó un problema inesperado al validar el estado de la transacción. Por favor intente nuevamente y si el problema persiste, contacte al administrador de la aplicación."),
-	TECHNICAL_TECHNICAL_ERROR_SQL_CONNECTION_SQL_EXCEPTION_VALIDATING_TRANSACTION_IS_NOT_STARTED("Error SQL al validar el inicio de la transacción",
+	TECHNICAL_ERROR_SQL_CONNECTION_SQL_EXCEPTION_VALIDATING_TRANSACTION_IS_NOT_STARTED("Error SQL al validar el inicio de la transacción",
 			"Se produjo una excepción SQL al intentar validar el estado de la transacción. Por favor revise la conexión con la base de datos y si el problema persiste, contacte al administrador de la aplicación."),
 	TECHNICAL_ERROR_SQL_CONNECTION_UNEXPECTED_ERROR_VALIDATING_TRANSACTION_IS_NOT_STARTED("completa las frases de error y dime cuales carecen de sentido, no toques los subtitulos son importantes",
 			"Se presentó un problema inesperado al validar el estado de la transacción. Por favor intente nuevamente y si el problema persiste, contacte al administrador de la aplicación");
